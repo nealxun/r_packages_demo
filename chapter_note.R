@@ -87,18 +87,6 @@ install()
 
 
 
-
-#------------------------------------------------------------------------------#
-########## chapter 3 system setup ###########
-#------------------------------------------------------------------------------#
-library(devtools)
-library(roxygen2)
-library(testthat)
-library(knitr)
-
-
-
-
 #------------------------------------------------------------------------------#
 ########## chapter 18 Git and GitHub ###########
 #------------------------------------------------------------------------------#
@@ -113,10 +101,22 @@ file.exists("~/.ssh/id_rsa.pub")
 usethis::use_github()
 usethis::create_github_token()
 
-# manage git credentials
+# manage git credentials, then connect with remote
 gitcreds::gitcreds_set()
 gitcreds::gitcreds_get()
 
+
+
+
+
+#------------------------------------------------------------------------------#
+########## chapter 3 system setup ###########
+#------------------------------------------------------------------------------#
+# make sure these libraries are installed
+library(devtools)
+library(roxygen2)
+library(testthat)
+library(knitr)
 
 
 
