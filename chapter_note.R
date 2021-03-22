@@ -118,5 +118,14 @@ library(roxygen2)
 library(testthat)
 library(knitr)
 
+## devtools, usethis, and you
+# attach devtools package every time when opens R
+use_devtools()
+# add the following code into .Rprofile.
+# if (interactive()) {
+# suppressMessages(require(devtools))
+# }
 
+# verify system prep
+has_devel()
 
