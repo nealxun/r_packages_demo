@@ -7,7 +7,7 @@ rm(list = ls())
 library(devtools)
 packageVersion("devtools")
 library(fs) # file system work
-library(tidyverse) # data wrangling
+library(tidyverse) # data wranglings
 
 
 
@@ -128,4 +128,34 @@ use_devtools()
 
 # verify system prep
 has_devel()
+
+
+
+
+#------------------------------------------------------------------------------#
+########## chapter 4 package structure and state ###########
+#------------------------------------------------------------------------------#
+# .Rbuildignore
+usethis::use_build_ignore("notes")
+
+# build a binary package
+devtools::build(binary = TRUE)
+
+# install_*() functions
+library(remotes)
+funs <- as.character(lsf.str("package:remotes"))
+grep("^install_.+", funs, value = TRUE)
+
+# see libraries
+.libPaths()
+lapply(.libPaths(), list.dirs, recursive = FALSE, full.names = FALSE)
+
+
+
+
+#------------------------------------------------------------------------------#
+########## chapter 5 fundamental development work-flows ###########
+#------------------------------------------------------------------------------#
+
+
 
