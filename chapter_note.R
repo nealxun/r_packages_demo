@@ -156,6 +156,24 @@ lapply(.libPaths(), list.dirs, recursive = FALSE, full.names = FALSE)
 #------------------------------------------------------------------------------#
 ########## chapter 5 fundamental development work-flows ###########
 #------------------------------------------------------------------------------#
+library(available)
+available("ccfcst")
+
+# create a package
+usethis::create_package("/Users/nealxun/Documents/Learning/R_Packages/ccfcst")
+
+# these should usually be the same (or unset)
+proj_sitrep()
+proj_set("/Users/nealxun/Documents/Learning/R_Packages/r_packages_demo")
+
+# with devtools attached and
+# working directory set to top-level of your source package ...
+load_all()
+# ... now experiment with the functions in your package
 
 
 
+
+#------------------------------------------------------------------------------#
+########## chapter 6 the package within ###########
+#------------------------------------------------------------------------------#
