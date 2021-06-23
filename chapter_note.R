@@ -87,27 +87,6 @@ install()
 
 
 
-#------------------------------------------------------------------------------#
-########## chapter 18 Git and GitHub ###########
-#------------------------------------------------------------------------------#
-# generate a SSH key
-file.exists("~/.ssh/id_rsa.pub")
-
-# Generating public/private rsa key pair.
-# Your identification has been saved in /Users/nealxun/.ssh/id_rsa.
-# Your public key has been saved in /Users/nealxun/.ssh/id_rsa.pub.
-# The key fingerprint is:
-# SHA256:2ga6U4zP0uJsX6rw5QSrSD9nkBEqu7FRZ4kEkzJPsRY nealxun@Neals-MacBook-Pro.local
-usethis::use_github()
-usethis::create_github_token()
-
-# manage git credentials, then connect with remote
-gitcreds::gitcreds_set()
-gitcreds::gitcreds_get()
-
-
-
-
 
 #------------------------------------------------------------------------------#
 ########## chapter 3 system setup ###########
@@ -187,3 +166,50 @@ load_all()
 #------------------------------------------------------------------------------#
 ########## chapter 7 R code ###########
 #------------------------------------------------------------------------------#
+
+
+
+
+#------------------------------------------------------------------------------#
+########## chapter 8 package metadata ###########
+#------------------------------------------------------------------------------#
+# You need the suggested package for this function
+my_fun <- function(a, b) {
+        if (!requireNamespace("pkg", quietly = TRUE)) {
+                stop("Package \"pkg\" needed for this function to work. Please install it.",
+                     call. = FALSE)
+        }
+}
+
+# There's a fallback method if the package isn't available
+my_fun <- function(a, b) {
+        if (requireNamespace("pkg", quietly = TRUE)) {
+                pkg::f()
+        } else {
+                g()
+        }
+}
+
+
+
+
+#------------------------------------------------------------------------------#
+########## chapter 18 Git and GitHub ###########
+#------------------------------------------------------------------------------#
+# generate a SSH key
+file.exists("~/.ssh/id_rsa.pub")
+
+# Generating public/private rsa key pair.
+# Your identification has been saved in /Users/nealxun/.ssh/id_rsa.
+# Your public key has been saved in /Users/nealxun/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# SHA256:2ga6U4zP0uJsX6rw5QSrSD9nkBEqu7FRZ4kEkzJPsRY nealxun@Neals-MacBook-Pro.local
+usethis::use_github()
+usethis::create_github_token()
+
+# manage git credentials, then connect with remote
+gitcreds::gitcreds_set()
+gitcreds::gitcreds_get()
+
+
+
