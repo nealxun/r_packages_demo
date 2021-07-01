@@ -199,17 +199,23 @@ my_fun <- function(a, b) {
 # generate a SSH key
 file.exists("~/.ssh/id_rsa.pub")
 
+# see git config in shell
+# git config --global --list
+
 # Generating public/private rsa key pair.
 # Your identification has been saved in /Users/nealxun/.ssh/id_rsa.
 # Your public key has been saved in /Users/nealxun/.ssh/id_rsa.pub.
 # The key fingerprint is:
 # SHA256:2ga6U4zP0uJsX6rw5QSrSD9nkBEqu7FRZ4kEkzJPsRY nealxun@Neals-MacBook-Pro.local
-usethis::use_github()
+
+# set up PAT (personal access token)
 usethis::create_github_token()
+
+# if PAT has been set up and want to add a remote on GitHub for the existing project
+usethis::use_github()
 
 # manage git credentials, then connect with remote
 gitcreds::gitcreds_set()
-gitcreds::gitcreds_get()
 
 
 
